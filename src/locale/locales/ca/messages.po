@@ -342,11 +342,6 @@ msgstr ""
 msgid "Artistic or non-erotic nudity."
 msgstr "Nuesa artística o no eròtica."
 
-#: src/view/com/post-thread/PostThread.tsx:400
-msgctxt "action"
-msgid "Back"
-msgstr ""
-
 #: src/view/com/auth/create/CreateAccount.tsx:142
 #: src/view/com/auth/login/ChooseAccountForm.tsx:151
 #: src/view/com/auth/login/ForgotPasswordForm.tsx:170
@@ -360,6 +355,11 @@ msgstr ""
 #: src/view/com/util/ViewHeader.tsx:81
 msgid "Back"
 msgstr "Endarrere"
+
+#: src/view/com/post-thread/PostThread.tsx:400
+msgctxt "action"
+msgid "Back"
+msgstr ""
 
 #: src/view/screens/Settings.tsx:489
 msgid "Basics"
@@ -498,15 +498,6 @@ msgstr "Càmera"
 msgid "Can only contain letters, numbers, spaces, dashes, and underscores. Must be at least 4 characters long, but no more than 32 characters long."
 msgstr "Només pot tenir lletres, números, espais, guions i guions baixos. Ha de tenir almenys 4 caràcters i no més de 32."
 
-#: src/view/com/modals/Confirm.tsx:88
-#: src/view/com/modals/Confirm.tsx:91
-#: src/view/com/modals/CreateOrEditList.tsx:291
-#: src/view/com/modals/DeleteAccount.tsx:152
-#: src/view/com/modals/DeleteAccount.tsx:230
-msgctxt "action"
-msgid "Cancel"
-msgstr ""
-
 #: src/components/Prompt.tsx:92
 #: src/view/com/composer/Composer.tsx:300
 #: src/view/com/composer/Composer.tsx:305
@@ -525,6 +516,15 @@ msgstr ""
 #: src/view/shell/desktop/Search.tsx:238
 msgid "Cancel"
 msgstr "Cancel·la"
+
+#: src/view/com/modals/Confirm.tsx:88
+#: src/view/com/modals/Confirm.tsx:91
+#: src/view/com/modals/CreateOrEditList.tsx:291
+#: src/view/com/modals/DeleteAccount.tsx:152
+#: src/view/com/modals/DeleteAccount.tsx:230
+msgctxt "action"
+msgid "Cancel"
+msgstr ""
 
 #: src/view/com/modals/DeleteAccount.tsx:148
 #: src/view/com/modals/DeleteAccount.tsx:226
@@ -707,12 +707,6 @@ msgstr ""
 msgid "Compose reply"
 msgstr "Redacta una resposta"
 
-#: src/view/com/modals/Confirm.tsx:75
-#: src/view/com/modals/Confirm.tsx:78
-msgctxt "action"
-msgid "Confirm"
-msgstr ""
-
 #: src/components/Prompt.tsx:114
 #: src/view/com/modals/AppealLabel.tsx:98
 #: src/view/com/modals/SelfLabel.tsx:154
@@ -722,6 +716,12 @@ msgstr ""
 #: src/view/screens/PreferencesThreads.tsx:159
 msgid "Confirm"
 msgstr "Confirma"
+
+#: src/view/com/modals/Confirm.tsx:75
+#: src/view/com/modals/Confirm.tsx:78
+msgctxt "action"
+msgid "Confirm"
+msgstr ""
 
 #: src/view/com/modals/ChangeEmail.tsx:193
 #: src/view/com/modals/ChangeEmail.tsx:195
@@ -2154,11 +2154,6 @@ msgstr ""
 msgid "Newest replies first"
 msgstr ""
 
-#: src/view/com/auth/onboarding/WelcomeDesktop.tsx:103
-msgctxt "action"
-msgid "Next"
-msgstr ""
-
 #: src/view/com/auth/create/CreateAccount.tsx:155
 #: src/view/com/auth/login/ForgotPasswordForm.tsx:178
 #: src/view/com/auth/login/ForgotPasswordForm.tsx:188
@@ -2168,6 +2163,11 @@ msgstr ""
 #: src/view/com/auth/onboarding/RecommendedFeeds.tsx:79
 msgid "Next"
 msgstr "Següent"
+
+#: src/view/com/auth/onboarding/WelcomeDesktop.tsx:103
+msgctxt "action"
+msgid "Next"
+msgstr ""
 
 #: src/view/com/lightbox/Lightbox.web.tsx:142
 msgid "Next image"
@@ -3689,15 +3689,15 @@ msgstr "Deixa de silenciar la llista"
 msgid "Unable to contact your service. Please check your Internet connection."
 msgstr "No es pot contactar amb el teu servei. Comprova la teva connexió a internet."
 
-#: src/view/com/profile/ProfileHeader.tsx:475
-msgctxt "action"
-msgid "Unblock"
-msgstr ""
-
 #: src/view/com/profile/ProfileHeader.tsx:472
 #: src/view/screens/ProfileList.tsx:568
 msgid "Unblock"
 msgstr "Desbloqueja"
+
+#: src/view/com/profile/ProfileHeader.tsx:475
+msgctxt "action"
+msgid "Unblock"
+msgstr ""
 
 #: src/view/com/profile/ProfileHeader.tsx:308
 #: src/view/com/profile/ProfileHeader.tsx:392

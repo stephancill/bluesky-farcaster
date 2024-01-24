@@ -2,6 +2,7 @@ import {BskyAgent} from '@atproto/api'
 
 export const PUBLIC_BSKY_AGENT = new BskyAgent({
   service: 'https://public.api.bsky.app',
+  // service: 'http://localhost:2584',
 })
 
 export const STALE = {

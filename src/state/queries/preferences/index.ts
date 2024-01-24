@@ -43,7 +43,10 @@ export function usePreferencesQuery() {
         const preferences: UsePreferencesQueryResponse = {
           ...res,
           feeds: {
-            saved: res.feeds?.saved || [],
+            saved: [
+              ...(res.feeds?.saved || []),
+              'at://farcaster/app.bsky.feed.generator/1689',
+            ],
             pinned: res.feeds?.pinned || [],
             unpinned:
               res.feeds.saved?.filter(f => {

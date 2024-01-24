@@ -28,6 +28,7 @@ import {getModerationOpts} from '#/state/queries/preferences/moderation'
 import {KnownError} from '#/view/com/posts/FeedErrorMessage'
 import {embedViewRecordToPostView, getEmbeddedPost} from './util'
 import {useModerationOpts} from './preferences'
+import {OpencastFeedAPI} from '../../lib/api/feed/opencast'
 
 type ActorDid = string
 type AuthorFilter =
@@ -263,6 +264,12 @@ export function usePostFeedQuery(
                             moderation: moderations[i],
                           }
                         }
+                        console.log('invalid post', {
+                          isRecord: AppBskyFeedPost.isRecord(item.post.record),
+                          isValidRecord: AppBskyFeedPost.validateRecord(
+                            item.post.record,
+                          ).success,
+                        })
                         return undefined
                       })
                       .filter(Boolean) as FeedPostSliceItem[],
@@ -354,6 +361,10 @@ function createApi(
     return new LikesFeedAPI({actor})
   } else if (feedDesc.startsWith('feedgen')) {
     const [_, feed] = feedDesc.split('|')
+    if (feed.startsWith('at://farcaster/')) {
+      console.log('creating opencast feed')
+      return new OpencastFeedAPI({feed})
+    }
     return new CustomFeedAPI({feed})
   } else if (feedDesc.startsWith('list')) {
     const [_, list] = feedDesc.split('|')

@@ -22,6 +22,7 @@ import {sanitizeHandle} from '#/lib/strings/handles'
 import {getAgent} from '#/state/session'
 import {usePreferencesQuery} from '#/state/queries/preferences'
 import {STALE} from '#/state/queries'
+import {sampleFeedDescriptor} from '../../lib/api/feed/opencast'
 
 export type FeedSourceFeedInfo = {
   type: 'feed'
@@ -145,7 +146,29 @@ export function useFeedSourceInfoQuery({uri}: {uri: string}) {
     queryFn: async () => {
       let view: FeedSourceInfo
 
-      if (type === 'feed') {
+      if (uri.startsWith('at://farcaster/')) {
+        const fid = uri.split('/').pop()!
+        console.log('using fid', fid)
+        view = hydrateFeedGenerator({
+          ...sampleFeedDescriptor,
+          route: {
+            href: `/profile/farcaster/feed/${fid}`,
+            name: 'ProfileFeed',
+            params: {
+              name: 'did:plc:asdf',
+              rkey: fid,
+            },
+          },
+          creator: {
+            did: sampleFeedDescriptor.creatorDid,
+            handle: sampleFeedDescriptor.creatorHandle,
+          },
+          did: sampleFeedDescriptor.creatorDid,
+          indexedAt: '2024-01-10T11:45:00.565Z',
+          descriptionFacets: [],
+          description: 'Hello',
+        })
+      } else if (type === 'feed') {
         const res = await getAgent().app.bsky.feed.getFeedGenerator({feed: uri})
         view = hydrateFeedGenerator(res.data.view)
       } else {

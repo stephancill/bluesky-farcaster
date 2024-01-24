@@ -10,11 +10,19 @@ export const RQKEY = (didOrHandle: string) => ['resolved-did', didOrHandle]
 type UriUseQueryResult = UseQueryResult<{did: string; uri: string}, Error>
 export function useResolveUriQuery(uri: string | undefined): UriUseQueryResult {
   const urip = new AtUri(uri || '')
+
   const res = useResolveDidQuery(urip.host)
   if (res.data) {
     urip.host = res.data
     return {
       ...res,
+      data: {did: urip.host, uri: urip.toString()},
+    } as UriUseQueryResult
+  } else if (urip.host === 'farcaster') {
+    return {
+      ...res,
+      error: null,
+      isError: false,
       data: {did: urip.host, uri: urip.toString()},
     } as UriUseQueryResult
   }
